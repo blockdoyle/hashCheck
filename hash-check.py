@@ -7,15 +7,26 @@ def getContent(file):
     openFile.close()
     return content
 
-def write2File(hashValue):
+def write2File(file, hashValue):
     outFile = input("Enter file location for write: ")
     openFile = open(outFile, "a")
-    openFile.write(hashValue)
+    openFile.write(file + ":" + hashValue)
     openFile.close()
     
-def fileHash(file):
+def fileHash(file, alg):
     fileContent = getContent(file)
-    return hashlib.md5(fileContent).hexdigest()
+    hashContent = hashlib.new(alg)
+    hashContent.update(fileContent)
+    return hashContent.hexdigest()
+    # return hashlib.md5(fileContent).hexdigest()
 
 inFile = input("Enter file path for hash value: ")
-print(fileHash(inFile))
+algSelect = input("Enter the algorithm you would like to use from below list:\n\n"+str(hashlib.algorithms_available)+"\n")
+hashResult = fileHash(inFile, algSelect)
+
+consoleOrFile = input("Would you like to write to console, or file? ")
+match consoleOrFile:
+    case "file":
+        write2File(inFile,hashResult)
+    case "console":
+        print(inFile + ":" + hashResult)
