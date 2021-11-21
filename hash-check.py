@@ -8,8 +8,7 @@ def getContent(file):
     return content
 
 def write2File(file, hashValue):
-    outFile = input("Enter file location for write: ")
-    openFile = open(outFile, "a")
+    openFile = open(f'.\hashes\{file}', "w")
     openFile.write(file + ":" + hashValue)
     openFile.close()
     
