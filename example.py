@@ -14,4 +14,4 @@ match writeOrCompare:
             case "file":
                 hashCheck.write2File(inFile,algSelect,hashResult) # writes filename, algorithm, and hashResult to file
     case "compare":
-        print(hashCheck.compareHash(inFile,algSelect)) # compares saved *.hash file with current file hash
+        print(hashCheck.compareHash(inFile,hashResult)) # compares saved *.hash file with current file hash
