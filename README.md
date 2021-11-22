@@ -5,4 +5,9 @@ hashCheck imports modules 'hashlib' and 'os'
 
 ## Usage
 
-* hashCheck.
+Example Usage of hashCheck. Replace 'var' with your own variable name
+
+```
+var = hashCheck.fileHash(inFile, algSelect) # stores return value from hashCheck.fileHash(inFile, algSelect)
+```
+
