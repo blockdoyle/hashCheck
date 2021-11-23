@@ -1,13 +1,19 @@
-import hashlib, os # import 'hashlib' and 'os' modules
+import hashlib, os, sys # import 'hashlib' and 'os' modules
 
 def getContent(file): # gets content of file in binary mode
-    openFile = open(file, "rb")
+    try:
+        openFile = open(file, "rb")
+    except FileNotFoundError:
+        sys.exit("File not found. Please enter a valid file path.")
     content = openFile.read()
     openFile.close()
     return content
 
 def write2File(file, alg, hashValue): # writes filename, algorithm, and hash to file
-    openFileBasename = os.path.basename(file)
+    try:
+        openFileBasename = os.path.basename(file)
+    except FileNotFoundError:
+        sys.exit("File not found. Please enter a valid file path.")
     openFile = open(f'.\hashes\{openFileBasename}.hash', "w")
     openFile.write(alg + ":" + hashValue)
     openFile.close()
