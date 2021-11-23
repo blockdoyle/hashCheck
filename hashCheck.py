@@ -1,4 +1,4 @@
-import hashlib, os, sys # import 'hashlib' and 'os' modules
+import hashlib, os, sys # import 'hashlib' for hash algorithms, 'os' for file i/o, and sys for program exit in try statements.
 
 def getContent(file): # gets content of file in binary mode
     try:
