@@ -33,3 +33,7 @@ hashCheck.write2File(inFile,algSelect,hashResult)
 hashCheck.compareHash(inFile,hashResult)
 ```
 `hashCheck.compareHash` will comapre the hash in the selected file with the hash stored in var.
+
+
+### Disclaimer
+This code was written for the "Python for Networking" course at Mohawk College and should not be used in a production setting.
