@@ -3,6 +3,10 @@ Generates a hash value for a given file, and outputs the hash to a file. It can 
 
 hashCheck imports modules 'hashlib', 'os', and 'sys'
 
+## Requirements
+
+Pytohn 3.10+
+
 ## Usage
 
 Example Usage of hashCheck. Replace variable names with your own.
